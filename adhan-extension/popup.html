@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Adhan Reminder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🕌 Adhan Reminder</h1>
+
+  <label for="city">City</label>
+  <input id="city" type="text" placeholder="e.g. Rotterdam" />
+
+  <label for="country">Country</label>
+  <input id="country" type="text" placeholder="e.g. Netherlands" />
+
+  <label for="method">Calculation method</label>
+  <select id="method">
+    <option value="2">ISNA (North America)</option>
+    <option value="3">Muslim World League</option>
+    <option value="4">Umm Al-Qura, Makkah</option>
+    <option value="5">Egyptian</option>
+    <option value="1">Karachi</option>
+    <option value="13">Diyanet (Turkey)</option>
+  </select>
+
+  <div class="row">
+    <span>Enabled</span>
+    <label class="switch">
+      <input id="enabled" type="checkbox" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <button id="save">Save & Refresh Times</button>
+  <div id="status"></div>
+  <div id="next"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
