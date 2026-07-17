@@ -14,15 +14,11 @@
         box-sizing: border-box; 
     }
 
-    html{
-      border-radius: 16px;
-      overflow: hidden;
-    }
+    
     body {
       width: 300px;
       margin: 0;
       padding: 16px;
-      border-radius: 16px;
       font-family: "Oswald", sans-serif;
 
       background: var(--bg);

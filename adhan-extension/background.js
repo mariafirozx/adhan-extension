@@ -98,7 +98,40 @@ async function scheduleToday() {
   midnight.setHours(24, 0, 30, 0); // 00:00:30 tomorrow
   chrome.alarms.create("adhan:refresh", { when: midnight.getTime() });
 }
+let creatingOffscreen; // guards against duplicate createDocument calls
 
+async function ensureOffscreenDocument() {
+  const existing = await chrome.runtime.getContexts?.({
+    contextTypes: ["OFFSCREEN_DOCUMENT"]
+  });
+  if (existing && existing.length > 0) return;
+
+  if (creatingOffscreen) {
+    await creatingOffscreen;
+    return;
+  }
+
+  creatingOffscreen = chrome.offscreen.createDocument({
+    url: "offscreen.html",
+    reasons: ["AUDIO_PLAYBACK"],
+    justification: "Play Adhan audio notification at prayer time."
+  });
+  await creatingOffscreen;
+  creatingOffscreen = null;
+}
+
+async function playAdhanSound() {
+  const { soundEnabled } = await chrome.storage.sync.get({ soundEnabled: true });
+  if (!soundEnabled) return;
+
+  await ensureOffscreenDocument();
+  chrome.runtime.sendMessage({
+    target: "offscreen",
+    type: "PLAY_SOUND",
+    src: "sounds/placeholder-chime.wav", // swap for your own adhan.mp3 in /sounds
+    volume: 1.0
+  });
+}
 function notify(title, message) {
   chrome.notifications.create(
     `adhan-${Date.now()}`,
