@@ -1,28 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Delius&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Goudy+Bookletter+1911&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Onest:wght@100..900&family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Sekuya&display=swap');
+
 :root {
-      --bg: #0f1712;
-      --card: #16211a;
-      --accent: #2f9e6b;
-      --accent-soft: #1f6e4a;
-      --text: #eef3ee;
-      --muted: #9ab3a2;
-      --border: #24352b;
+      --bg: #fdf8e1;
+      --card: #007f5f;
+      --accent: #dfba40;
+      --accent-soft: #003566;
+      --text: #fffee2;
+      --muted: #001d3d;
+      --border: #c9c2a0;
     }
-    * { box-sizing: border-box; }
+
+    * { 
+        box-sizing: border-box; 
+    }
+
+    html{
+      border-radius: 16px;
+      overflow: hidden;
+    }
     body {
       width: 300px;
       margin: 0;
       padding: 16px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      border-radius: 16px;
+      font-family: "Oswald", sans-serif;
+
       background: var(--bg);
       color: var(--text);
     }
     h1 {
-      font-size: 15px;
-      font-weight: 600;
+      font-size: 17px;
+      font-weight: 550;
       margin: 0 0 12px 0;
       display: flex;
       align-items: center;
       gap: 6px;
+      color: var(--accent-soft);
     }
     label {
       display: block;
@@ -37,7 +50,7 @@
       padding: 8px 10px;
       border-radius: 8px;
       border: 1px solid var(--border);
-      background: var(--card);
+      background: var(--accent-soft);
       color: var(--text);
       font-size: 13px;
     }
@@ -95,7 +108,7 @@
       background: var(--accent-soft);
       border: none;
       border-radius: 8px;
-      color: var(--text);
+      color: var(--bg);
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
@@ -112,9 +125,13 @@
       padding: 10px 12px;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 12px;
+      border-radius: 10px;
+      font-size: 13px;
       color: var(--muted);
       line-height: 1.5;
     }
-    #next b { color: var(--text); }
+    #next b { 
+      background-color: var(--accent-soft);
+      color: var(--text); 
+      border-radius: 3px;
+    }
