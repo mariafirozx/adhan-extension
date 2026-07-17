@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Adhan Reminder",
+  "name": "Muslim Prayer Reminder",
   "version": "1.0",
-  "description": "Get a heads-up 5 minutes before Adhan, and again right when it's time — so you know to take your earphones out.",
+  "description": "Get a heads-up 5 minutes before prayer, and again right when it's time, so you know when to take out your earphone and stop the music!",
   "permissions": ["alarms", "notifications", "storage"],
   "host_permissions": ["https://api.aladhan.com/*"],
   "background": {

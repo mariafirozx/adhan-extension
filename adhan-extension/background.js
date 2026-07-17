@@ -124,7 +124,7 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
   const [, prayer, when] = match;
 
   if (when === "pre") {
-    notify("Adhan in 5 minutes 🕌", `${prayer} is coming up in 5 minutes — good time to take your earphones out.`);
+    notify("Adhan in 5 minutes 🕌", `${prayer} is coming up in 5 minutes. Time to take out your earphones, don't you think?`);
   } else {
     notify("Adhan time 🕌", `It's time for ${prayer}.`);
   }
